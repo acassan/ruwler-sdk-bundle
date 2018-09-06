@@ -9,9 +9,19 @@
         "php": "^7.1",
         "ruwler/ruwler-sdk-php": "^1.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8.35|^5.4.0|^6.0.0",
+        "symfony/framework-bundle": "~2.3|~3.0|~4.0",
+        "symfony/yaml": "~2.3|~3.0|~4.0"
+    },
     "autoload": {
         "psr-4": {
             "Ruwler\\SdkBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ruwler\\SdkBundle\\": "tests/"
         }
     },
     "config": {
