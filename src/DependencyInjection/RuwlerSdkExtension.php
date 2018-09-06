@@ -2,11 +2,11 @@
 
 namespace Ruwler\SdkBundle\DependencyInjection;
 
-use Nelmio\CorsBundle\DependencyInjection\Configuration;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader;
+use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
  * Class RuwlerSdkExtension
@@ -27,7 +27,7 @@ class RuwlerSdkExtension extends Extension
         $loader->load('services.yml');
 
         foreach ($config as $key => $value) {
-            $container->setParameter('ruwler.' . $key, $value);
+            $container->setParameter(sprintf("%s.%s", $this->getAlias(), $key), $value);
         }
     }
 }

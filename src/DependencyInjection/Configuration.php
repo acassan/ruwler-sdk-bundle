@@ -2,7 +2,7 @@
 
 namespace Ruwler\SdkBundle\DependencyInjection;
 
-use Ruwler\SdkBundle\RuwlerService;
+use Ruwler\SdkBundle\RuwlerClient;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -21,13 +21,14 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
+
         /** @var ArrayNodeDefinition $rootNode */
         $rootNode = $treeBuilder->root('ruwler');
 
         $rootNode
             ->children()
                 ->scalarNode('client')
-                    ->defaultValue(RuwlerService::class)
+                    ->defaultValue(RuwlerClient::class)
                 ->end()
                 ->scalarNode('api_key')
                     ->beforeNormalization()
@@ -36,6 +37,8 @@ class Configuration implements ConfigurationInterface
                     ->end()
                     ->defaultNull()
                 ->end();
+
+        return $treeBuilder;
     }
 
     private function getTrimClosure(): callable
