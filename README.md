@@ -1,5 +1,8 @@
-Installation
+ Installation
 ============
+
+
+[![Latest Stable Version](https://img.shields.io/packagist/v/ruwler/ruwler-sdk-php.svg)](https://packagist.org/packages/ruwler/ruwler-sdk-php)
 
 Applications that use Symfony Flex
 ----------------------------------
@@ -7,7 +10,7 @@ Applications that use Symfony Flex
 Open a command console, enter your project directory and execute:
 
 ```console
-$ composer require <package-name>
+$ composer require ruwler
 ```
 
 Applications that don't use Symfony Flex
@@ -19,7 +22,7 @@ Open a command console, enter your project directory and execute the
 following command to download the latest stable version of this bundle:
 
 ```console
-$ composer require <package-name>
+$ composer require ruwler/ruwler-sdk-bundle
 ```
 
 This command requires you to have Composer installed globally, as explained
@@ -42,7 +45,7 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             // ...
-            new <vendor>\<bundle-name>\<bundle-long-name>(),
+            new Ruwler\SdkBundle\RuwlerSdkBundle(),
         );
 
         // ...
@@ -51,3 +54,22 @@ class AppKernel extends Kernel
     // ...
 }
 ```
+
+### Configuration
+
+The sample configuration which can be placed in `app/config/config.yml` file.
+
+```yaml
+ruwler_sdk:
+    api_key: "xxx"
+```
+
+## Usage
+
+This bundle expose Ruwler SDK Client auto configured class: 'ruwler.client'
+
+## Links
+
+* [Api Documentation](https://ruwler.io/)
+* [License](http://aws.amazon.com/apache2.0/)
+* [Symfony website](http://symfony.com/)
