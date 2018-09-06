@@ -1,0 +1,22 @@
+{
+    "name": "ruwler/ruwler-sdk-bundle",
+    "homepage": "https://api.ruwler.io",
+    "type": "symfony-bundle",
+    "description" : "Ruwler SDK Bundle",
+    "keywords": ["ruwler-sdk-bundle", "ruwler", "sdk-php", "ruwler-php", "symfony"],
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^7.1",
+        "ruwler/ruwler-sdk-php": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ruwler\\SdkBundle\\": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

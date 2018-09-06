@@ -1,0 +1,6 @@
+services:
+  ruwler.client:
+    class: '%ruwler.client%'
+    public: true
+    arguments:
+      - '%ruwler.api_key%'
