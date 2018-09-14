@@ -27,16 +27,31 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('client')
-                    ->defaultValue(RuwlerClient::class)
-                ->end()
                 ->scalarNode('api_key')
                     ->beforeNormalization()
                         ->ifString()
                         ->then($this->getTrimClosure())
                     ->end()
                     ->defaultNull()
-                ->end();
+                ->end()
+                ->scalarNode('scheme')
+                    ->beforeNormalization()
+                        ->ifString()
+                        ->then($this->getTrimClosure())
+                    ->end()
+                    ->defaultValue('https')
+                ->end()
+                ->scalarNode('host')
+                    ->beforeNormalization()
+                        ->ifString()
+                        ->then($this->getTrimClosure())
+                    ->end()
+                    ->defaultValue('api.ruwler.io')
+                ->end()
+                ->scalarNode('port')->defaultValue(80)->end()
+                ->scalarNode('timeout')->defaultValue(30)->end()
+                ->scalarNode('debug')->defaultFalse()->end()
+        ;
 
         return $treeBuilder;
     }

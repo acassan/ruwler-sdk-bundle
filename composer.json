@@ -16,12 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ruwler\\SdkBundle\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Ruwler\\SdkBundle\\": "tests/"
+            "Ruwler\\SdkBundle\\": ""
         }
     },
     "config": {

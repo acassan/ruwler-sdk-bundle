@@ -1,6 +1,0 @@
-services:
-  ruwler.client:
-    class: '%ruwler_sdk.client%'
-    public: true
-    arguments:
-      - '%ruwler_sdk.api_key%'

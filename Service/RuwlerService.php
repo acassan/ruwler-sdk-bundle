@@ -1,12 +1,12 @@
 <?php
 
-namespace Ruwler\SdkBundle;
+namespace Ruwler\SdkBundle\Service;
 
 use Ruwler\RuwlerSdk;
 
 /**
  * Class RuwlerService
- * @package Ruwler\SdkBundle
+ * @package Ruwler\SdkBundle\Service
  */
 class RuwlerService extends RuwlerSdk
 {
