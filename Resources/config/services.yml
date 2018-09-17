@@ -1,11 +1,8 @@
 parameters:
-  ruwler_sdk.scheme: 'https'
-  ruwler_sdk.host: 'api.ruwler.io'
-  ruwler_sdk.port: 80
-  ruwler_sdk.timeout: 30
-  ruwler_sdk.debug: false
+    ruwler_sdk.test: 'testok'
 
 services:
-  Ruwler\SdkBundle\Service\RuwlerService:
-    arguments:
-      $apiKey: '%ruwler_sdk.api_key%'
+    Ruwler\SdkBundle\Service\RuwlerService:
+        arguments:
+            $apiKey: '%ruwler_sdk.api_key%'
+            $options: {scheme: '%ruwler_sdk.scheme%', host: '%ruwler_sdk.host%', port: '%ruwler_sdk.port%', timeout: '%ruwler_sdk.timeout%', debug: '%ruwler_sdk.debug%'}
