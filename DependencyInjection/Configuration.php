@@ -47,7 +47,6 @@ class Configuration implements ConfigurationInterface
                     ->end()
                     ->defaultValue('api.ruwler.io')
                 ->end()
-                ->scalarNode('port')->defaultValue(80)->end()
                 ->scalarNode('timeout')->defaultValue(30)->end()
                 ->scalarNode('debug')->defaultFalse()->end()
                 ->scalarNode('format')->defaultValue('json')->end()

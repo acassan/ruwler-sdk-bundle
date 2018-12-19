@@ -2,4 +2,4 @@ services:
     Ruwler\SdkBundle\Service\RuwlerService:
         arguments:
             $apiKey: '%ruwler_sdk.api_key%'
-            $options: {scheme: '%ruwler_sdk.scheme%', host: '%ruwler_sdk.host%', port: '%ruwler_sdk.port%', timeout: '%ruwler_sdk.timeout%', debug: '%ruwler_sdk.debug%', format: '%ruwler_sdk.format%'}
+            $options: {scheme: '%ruwler_sdk.scheme%', host: '%ruwler_sdk.host%', timeout: '%ruwler_sdk.timeout%', debug: '%ruwler_sdk.debug%', format: '%ruwler_sdk.format%'}
