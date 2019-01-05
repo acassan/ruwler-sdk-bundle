@@ -38,7 +38,7 @@ class Configuration implements ConfigurationInterface
                         ->ifString()
                         ->then($this->getTrimClosure())
                     ->end()
-                    ->defaultValue('https')
+                    ->defaultValue('apikey')
                 ->end()
                 ->scalarNode('host')
                     ->beforeNormalization()
